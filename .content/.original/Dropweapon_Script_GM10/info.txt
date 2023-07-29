@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"		"Dropweapon Script"
+	"version"	"2.0"
+	"up_date"	"15 september 2010"
+	"author_name"	"Jesse V-92"
+        "author_email"	"desertyetti@firestormstudios.us"
+	"author_url"	"http://www.firestormstudios.us"
+	
+	"info"		"Dropweapon Script with NULL auto-bind command removed. Fix removes repeated LUA Error in server console."
+}
