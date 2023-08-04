@@ -4,29 +4,30 @@ TOOL.Name			= "Entity ID"
 TOOL.Command		= nil
 TOOL.ConfigName		= nil
 
+-- local ply = TOOL:GetOwner()
+
 function TOOL:LeftClick(tr)
 
-	if !IsValid(tr.Entity) then return false end
+	if !IsValid( tr.Entity ) then 
 
-	if CLIENT then return true end
+		return false
 
-	self.SelectedEnt = tr.Entity
+	end
 
-	print( "\nEntity Class is: " .. self.SelectedEnt:GetClass() .. "\nMapCreationID is: " .. self.SelectedEnt:MapCreationID() )
+	target = tr.Entity
 
-	return false
+	if CLIENT then
+		-- self.Owner:PrintMessage( HUD_PRINTTALK , "\nEntity Class: " .. target:GetClass() .. "\nMapCreationID: " .. target:MapCreationID() .. "\nCreationID: " .. target:GetCreationID() .. "\nEntIndex ID: " .. target:EntIndex() .. "\nName: " .. targetName )
+		chat.AddText( Color( 100 , 255 , 100 ) , "Entity Class is: " .. target:GetClass() .. "\nMapCreationID is: " .. target:MapCreationID() .. "\nCreationID is: " .. target:GetCreationID() .. "\nEntIndex ID is: " .. target:EntIndex() )
+	-- else
+		-- PrintMessage( HUD_PRINTTALK , "\nEntity Class: " .. target:GetClass() .. "\nMapCreationID: " .. target:MapCreationID() .. "\nCreationID: " .. target:GetCreationID() .. "\nEntIndex ID: " .. target:EntIndex() .. "\nName: " .. target:GetName() )
+	end
+
+	return
 
 end
 
 function TOOL:RightClick(tr)
-
-	if !IsValid(tr.Entity) then return false end
-
-	if CLIENT then return true end
-
-	self.SelectedEnt = tr.Entity
-
-	print( "\nEntity Class is: " .. self.SelectedEnt:GetClass() .. "\nCreationID is: " .. self.SelectedEnt:GetCreationID() )
 
 	return false
 
@@ -34,22 +35,14 @@ end
 
 function TOOL:Reload(tr)
 
-	if !IsValid(tr.Entity) then return false end
-
-	if CLIENT then return true end
-
-	self.SelectedEnt = tr.Entity
-
-	print( "\nEntity Class is: " .. self.SelectedEnt:GetClass() .. "\nEntIndex ID is: " .. self.SelectedEnt:EntIndex() )
-
 	return false
 
 end
 
 if CLIENT then
 
-language.Add("tool.entity_id.name","Entity ID")
-language.Add("tool.entity_id.0","Left: MapCreationID, Right: CreationID, Reload: EntIndex")
-language.Add("tool.entity_id.desc","Get the entity ID of a prop, entity, etc.")
+	language.Add("tool.entity_id.name","Entity ID")
+	language.Add("tool.entity_id.0","Left: Print Info")
+	language.Add("tool.entity_id.desc","Get the ID of an entity.")
 
 end
