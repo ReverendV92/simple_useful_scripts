@@ -29,7 +29,11 @@ Use the handy options panel on the right side of the spawn menu, under [b]Option
 bind <key> dropweapon
 bind <key> killsilent
 bind <key> knock
-bind <key> cleanupitems```
+bind <key> cleanupitems
+```
 
 # License
 This file is open source. You are allowed to edit & share any deviations you create, as long as you make any edits open source as well. A link back to this file somewhere in your description and crediting me is required.
+
+# Other Versions
+https://steamcommunity.com/sharedfiles/filedetails/?id=136546465
